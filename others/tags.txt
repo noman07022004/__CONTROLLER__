@@ -1,0 +1,6 @@
+system,
+vampire,
+hunter,
+supernatural,
+adventure,
+adventurer,
