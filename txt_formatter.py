@@ -39,6 +39,8 @@ def clean_text(text):
     text = re.sub(r'(\d+)/(\d+)', r'\1 out of \2', text)
 
     text = re.sub(r'[<>]', '', text)
+    text = re.sub(r'\n+', '\n', text)
+    text = re.sub(r'\b([a-zA-Z]+)\d+\b', r'\1', text)
     return text
 
 

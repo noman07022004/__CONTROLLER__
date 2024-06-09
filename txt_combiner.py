@@ -22,13 +22,14 @@ def combine_files(files, num_files, output_dir):
 def select_files():
     root = tk.Tk()
     root.withdraw()
-    file_paths = filedialog.askopenfilenames(filetypes=[("Text files", "*.txt")])
+    file_paths = filedialog.askopenfilenames(
+        filetypes=[("Text files", "*.txt")])
     file_paths = sorted(
         file_paths, key=lambda x: int(os.path.splitext(os.path.basename(x))[0])
     )
     output_dir = filedialog.askdirectory(
         initialdir=os.path.dirname(
-            os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
+            os.path.dirname(os.path.realpath(__file__))
         )
     )
     num_files = int(input("Enter the number of files to combine at a time: "))
