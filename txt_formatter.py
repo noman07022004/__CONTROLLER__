@@ -5,11 +5,14 @@ import tkinter as tk
 from tkinter import filedialog
 from unidecode import unidecode
 
+
 def select_files():
     root = tk.Tk()
     root.withdraw()
-    files = filedialog.askopenfilenames(title="Select TXT files", filetypes=[("Text files", "*.txt")])
+    files = filedialog.askopenfilenames(
+        title="Select TXT files", filetypes=[("Text files", "*.txt")])
     return files
+
 
 def select_output_folder():
     root = tk.Tk()
@@ -33,9 +36,9 @@ def clean_text(text):
     text = re.sub(r'(?<=\D)[!] ', '!\n', text)
     text = re.sub(r'(?<=\D)[?] ', '?\n', text)
     text = re.sub(r'(?<=\D)["] ', '"\n', text)
-    text = re.sub(r'(\d+)/(\d+)',r'\1 out of \2',text)
+    text = re.sub(r'(\d+)/(\d+)', r'\1 out of \2', text)
 
-    text = re.sub(r'[<>]','',text)
+    text = re.sub(r'[<>]', '', text)
     return text
 
 
@@ -57,4 +60,5 @@ if __name__ == "__main__":
     else:
         for file in input_files:
             process_file(file, output_folder)
-        print(f"Processed {len(input_files)} files. Cleaned files saved in {output_folder}")
+        print(f"Processed {len(input_files)
+                           } files. Cleaned files saved in {output_folder}")

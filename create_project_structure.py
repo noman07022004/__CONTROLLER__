@@ -3,23 +3,30 @@ import tkinter as tk
 from tkinter import filedialog
 
 # Function to create a directory if it doesn't exist
+
+
 def create_dir(path):
     if not os.path.exists(path):
         os.makedirs(path)
 
 # Function to create a file if it doesn't exist
+
+
 def create_file(path):
     if not os.path.exists(path):
         with open(path, 'w', encoding="utf-8") as f:
             f.close()
 
 # Function to select a directory using a GUI
+
+
 def select_directory():
     root = tk.Tk()
     root.withdraw()  # Hide the main window
     current_directory = os.getcwd()
     folder_selected = filedialog.askdirectory(initialdir=current_directory)
     return folder_selected
+
 
 # Ask the user to select the base directory
 base_dir = select_directory()
@@ -34,11 +41,11 @@ project_dir = os.path.join(base_dir, project_name)
 # Create the project directory and subdirectories
 create_dir(project_dir)
 
-# Create the 'text' folder 
+# Create the 'text' folder
 text_dir = os.path.join(project_dir, 'text')
 create_dir(text_dir)
 
-# Create the 'unformatted', 'combined_unformatted' folder and '0.txt' file inside 'text' 
+# Create the 'unformatted', 'combined_unformatted' folder and '0.txt' file inside 'text'
 unformatted_dir = os.path.join(text_dir, 'unformatted')
 create_dir(unformatted_dir)
 combined_unformatted_dir = os.path.join(text_dir, 'combined_unformatted')
@@ -69,5 +76,5 @@ thumbnail_dir = os.path.join(others_dir, 'thumbnail')
 create_dir(thumbnail_dir)
 
 
-
-print(f"Project '{project_name}' has been created successfully at '{base_dir}'!")
+print(f"Project '{project_name}' has been created successfully at '{
+      base_dir}'!")
