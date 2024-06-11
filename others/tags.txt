@@ -41,4 +41,7 @@ Sci-Fi,
 sports,
 historical,
 harem,
-badass
+badass,
+domination,
+protagonist,
+magic,
