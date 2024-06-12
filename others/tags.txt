@@ -45,3 +45,5 @@ badass,
 domination,
 protagonist,
 magic,
+Mysteries,
+Mystery
